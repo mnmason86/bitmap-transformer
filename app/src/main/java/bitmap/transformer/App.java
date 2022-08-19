@@ -6,6 +6,11 @@ package bitmap.transformer;
 public class App {
 
     public static void main(String[] args) {
-
+        BitMap x = new BitMap("C:\\msys64\\home\\mnmas\\bitmap-transformer\\app\\src\\main\\resources\\baldy-8bit.bmp", "C:\\msys64\\home\\mnmas\\bitmap-transformer\\app\\src\\main\\resources\\altered-image.bmp", "reverseColor");
+        x.readFile();
+        x.greyScale();
+        x.writeFile();
+        x.verticalReverse();
+        x.greenScale();
     }
 }
