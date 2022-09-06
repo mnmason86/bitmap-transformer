@@ -33,7 +33,6 @@ public class BitMap {
             System.exit(-1);
         }
     }
-
     public void writeFile(){
         try{
             ImageIO.write(sendImage, "bmp", new File(outputFilePath));
@@ -58,16 +57,19 @@ public class BitMap {
         }
     }
     public void verticalReverse(){
+        int type = BufferedImage.TYPE_INT_RGB;
+        sendImage = new BufferedImage(width, height, type);
         for(int i = 0; i < width; i++){
             for(int j = 0; j < height/2; j++){
                 int reverseVert = getImage.getRGB(i,j);
-                this.getImage.setRGB(i,j,getImage.getRGB(i,this.getImage.getHeight()-j-1));
-                this.getImage.setRGB(i,this.getImage.getHeight()-j-1, reverseVert);
-
+                this.sendImage.setRGB(i,j,getImage.getRGB(i,this.getImage.getHeight()-j-1));
+                this.sendImage.setRGB(i,this.getImage.getHeight()-j-1, reverseVert);
             }
         }
     }
     public void greenScale(){
+        int type = BufferedImage.TYPE_INT_RGB;
+        sendImage = new BufferedImage(width, height, type);
         for(int i = 0; i < width; i++){
             for(int j = 0; j < height; j++){
                 Color newColor = new Color(getImage.getRGB(i,j));
@@ -75,12 +77,10 @@ public class BitMap {
                 int g = newColor.getGreen();
                 int b = newColor.getBlue();
                 int a = newColor.getAlpha();
-                Color green = new Color(0,g,0,a);
-                this.getImage.setRGB(i,j,green.getRGB());
-                sendImage.setRGB(i,j,newColor.getRGB());
+                Color green = new Color(1,g,1,a);
+                sendImage.setRGB(i,j,green.getRGB());
             }
         }
     }
-
 }
 
