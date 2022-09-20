@@ -24,6 +24,8 @@ Output: '<any-file>.bmp'
 Available transform names:
 'grey-scale', 'green-scale', and 'vertical-reverse'
 
+***App will fail to run with no command line arguments***
+
 ### Attribution: 
 
 Special Thanks to Raul Zarate and Ben Mills
