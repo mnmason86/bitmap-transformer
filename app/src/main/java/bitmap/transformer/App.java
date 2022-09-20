@@ -3,6 +3,11 @@ package bitmap.transformer;
 public class App {
 
     public static void main(String[] args) {
+        if (args.length != 3){
+            System.err.println("Argument missing");
+            System.err.println("Usage: <input-file> <output-file> <transform-name>");
+            System.exit(1);
+        }
         try {
             String rootPath = System.getProperty("user.dir");
             String resourcePath = "";
